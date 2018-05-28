@@ -70,7 +70,6 @@ void newComment(){
             child:new StreamBuilder(
               stream: Firestore.instance.collection('jod').snapshots(),
               builder: (context,snapshot){
-              //  print("There are ${snapshot.data.documents[widget.postid]['comments'].length}");
                 try {
                   if (snapshot.hasData){
                     return new ListView.builder(
