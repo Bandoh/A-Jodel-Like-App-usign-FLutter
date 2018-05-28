@@ -4,6 +4,8 @@
 .packages
 .pub/
 
+.google-services.json
+
 build/
 
 .flutter-plugins
