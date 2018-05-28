@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "374479411711",
+    "firebase_url": "https://jodel-2dcda.firebaseio.com",
+    "project_id": "jodel-2dcda",
+    "storage_bucket": "jodel-2dcda.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374479411711:android:4371ae30eac3dd06",
+        "android_client_info": {
+          "package_name": "com.example.firebasetrychat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374479411711-q70geqpf304dllh4d0fepbeocj0390m5.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "374479411711-q70geqpf304dllh4d0fepbeocj0390m5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRqjGayKtK5miQViD0eBV-c-OPOI7w-rY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
