@@ -1,4 +1,4 @@
-# A-Jodel-Like-App-usign-FLutter
+## A-Jodel-Like-App-using-Futter
 
 
 A new Flutter project.
@@ -6,5 +6,5 @@ A new Flutter project.
 ## Getting Started
 
 For help getting started with Flutter, view our online
-#[documentation](https://flutter.io/).
+[documentation](https://flutter.io/).
 
