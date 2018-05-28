@@ -10,36 +10,45 @@ class Auth extends StatefulWidget {
 }
 
 class _AuthState extends State<Auth> with SingleTickerProviderStateMixin {
+  String username;
   Animation animation;
   AnimationController controller;
   TextEditingController _email = new TextEditingController();
   TextEditingController _password = new TextEditingController();
 
-  void _signup() {
+  Future<FirebaseUser> _signup() async {
     FirebaseAuth auth;
     auth = FirebaseAuth.instance;
-    auth
+    FirebaseUser user;
+    user = await auth
         .createUserWithEmailAndPassword(
             password: _password.text, email: _email.text)
-        .whenComplete(() {
+        .then((FirebaseUser user) {
       print("Saved ${_email.text}");
       Navigator.of(context).pushNamed("/Messcreen");
+      return user;
     });
+    username = user.email;
+    return user;
   }
 
-  void _signin() {
-    try {
-      FirebaseAuth auth;
-      auth = FirebaseAuth.instance;
-      auth
-          .signInWithEmailAndPassword(
-              password: _password.text, email: _email.text)
-          .whenComplete(() {
-        Navigator.of(context).pushNamed("/Messcreen");
-      });
-    } catch (e) {
-      print(e.toString());
+  Future<FirebaseUser> _signin() async {
+    FirebaseAuth auth;
+    auth = FirebaseAuth.instance;
+    FirebaseUser user = await auth
+        .signInWithEmailAndPassword(
+            email: _email.text, password: _password.text)
+        .then((FirebaseUser user) {
+      return user;
+    });
+    if (user == null) {
+      print("Error");
+    } else {
+      Navigator.of(context).pushNamed("/Messcreen");
     }
+    print("This is Second $user");
+    username = user.email;
+    return user;
   }
 
   @override
@@ -100,7 +109,7 @@ class _AuthState extends State<Auth> with SingleTickerProviderStateMixin {
                           right: 45.0, top: animation.value * 10),
                       child: new FlatButton(
                         onPressed: () {
-                          _signin();
+                         _signin();
                         },
                         child: new Text(
                           "Sign In",
