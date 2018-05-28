@@ -1,6 +1,5 @@
 # A-Jodel-Like-App-usign-FLutter
 
-# pharmacy_prototype
 
 A new Flutter project.
 
