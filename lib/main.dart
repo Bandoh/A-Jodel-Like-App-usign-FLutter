@@ -1,5 +1,7 @@
+
 import 'package:firebasetrychat/Messcreen.dart';
 import 'package:firebasetrychat/routes/Comments.dart';
+import 'package:firebasetrychat/routes/signinRegister.dart';
 import 'package:flutter/material.dart';
 void main() => runApp(new MyApp());
 
@@ -11,6 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: <String,WidgetBuilder>{
         "/comments": (BuildContext context)=>new Comments(value: tex,postid: postnumber,),
+        "/Messcreen":(BuildContext context)=> new Messcreen(),
       },
       title: 'Flutter Demo',
       theme: new ThemeData(
@@ -33,17 +36,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-//CollectionReference get mess => fs.collection('Try');
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      backgroundColor: Colors.white,
-      appBar: new AppBar(
-        title: new Text("FireBase_Chat"),
-        backgroundColor: Colors.indigo,
-      ),
-      body: new Messcreen()
-    );
+    return new Auth();
   }
 }
